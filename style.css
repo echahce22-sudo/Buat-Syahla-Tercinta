@@ -1,0 +1,318 @@
+/* --- RESET & BASIC --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #fff5f5; /* Warna background soft */
+    font-family: 'Quicksand', sans-serif;
+    color: #4a4a4a;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 600px; /* Ukuran pas untuk layar HP dan nyaman di desktop */
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* --- MUSIC PLAYER --- */
+.music-player {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 5px 10px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.music-player audio {
+    width: 100px; /* Mengecilkan player agar tidak ganggu pemandangan */
+    height: 30px;
+}
+
+/* --- HEADER --- */
+header {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.8rem;
+    color: #ffb7b2;
+    margin-bottom: 5px;
+}
+
+header p {
+    font-size: 1rem;
+    color: #a0a0a0;
+}
+
+/* --- GALLERY (RESPONSIVE) --- */
+.gallery {
+    display: flex;
+    flex-direction: column; /* Default satu kolom di HP */
+    gap: 25px;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.photo-card {
+    background: white;
+    padding: 12px 12px 25px 12px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    width: 90%; /* Lebar pas di HP */
+    max-width: 300px;
+    transition: 0.3s;
+}
+
+.photo-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 2px;
+}
+
+.caption {
+    font-family: 'Indie Flower', cursive;
+    font-size: 1.2rem;
+    margin-top: 15px;
+    text-align: center;
+    color: #6a6a6a;
+}
+
+/* --- LETTER SECTION --- */
+.letter-container {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+    margin-bottom: 40px;
+    position: relative;
+    border-left: 5px solid #ffb7b2;
+}
+
+.letter-container h2 {
+    font-family: 'Dancing Script', cursive;
+    color: #ffb7b2;
+    margin-bottom: 15px;
+}
+
+.letter-content p {
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+
+/* --- BUTTONS --- */
+button {
+    transition: transform 0.2s, background 0.3s;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+/* --- VIDEO MODAL --- */
+#videoModal > div {
+    margin: 20px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+}
+
+/* --- FOOTER --- */
+footer {
+    text-align: center;
+    padding: 30px 0;
+    font-size: 0.8rem;
+    color: #b0b0b0;
+}
+
+/* --- MEDIA QUERIES (Untuk Tablet/Desktop) --- */
+@media (min-width: 768px) {
+    .gallery {
+        flex-direction: row; /* Berjejer ke samping di layar lebar */
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .photo-card {
+        width: 45%;
+    }
+}
+
+/* --- ANIMASI HADIAH (KUE & BALON) --- */
+
+.gift-animation-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+/* --- KUE ULANG TAHUN (CSS MURNI) --- */
+.cake {
+    position: relative;
+    width: 150px;
+    height: 100px;
+    background: #f1c40f; /* Warna Kue */
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.cake::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 5px;
+    width: 140px;
+    height: 40px;
+    background: #e67e22; /* Warna Topping */
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.cake::after {
+    content: '';
+    position: absolute;
+    top: 30px;
+    left: 10px;
+    width: 130px;
+    height: 15px;
+    background: #fff; /* Warna Cream Tengah */
+    border-radius: 5px;
+}
+
+/* Lilin */
+.candle {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 40px;
+    background: #e74c3c;
+    border-radius: 3px;
+}
+
+/* Api Lilin (Animasi) */
+.flame {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 12px;
+    height: 18px;
+    background: #f39c12;
+    border-radius: 50% 50% 20% 20%;
+    box-shadow: 0 0 10px #f39c12;
+    animation: flicker 0.5s infinite alternate;
+}
+
+@keyframes flicker {
+    0% { transform: translateX(-50%) scale(1); opacity: 0.9; }
+    100% { transform: translateX(-50%) scale(1.1); opacity: 1; }
+}
+
+/* Efek Lilin Mati */
+.candle.blown-out .flame {
+    display: none;
+}
+
+.candle.blown-out::after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 10px;
+    background: #555; /* Asap */
+    border-radius: 1px;
+    animation: smoke 2s ease-out forwards;
+}
+
+@keyframes smoke {
+    0% { transform: translateX(-50%) translateY(0); opacity: 0.5; }
+    100% { transform: translateX(-50%) translateY(-20px) scale(1.5); opacity: 0; }
+}
+
+/* --- BALON BERTULISAN "SYAHLA" --- */
+.baloon-container {
+    display: flex;
+    gap: 10px;
+}
+
+.baloon {
+    position: relative;
+    width: 45px;
+    height: 55px;
+    background: #ffb7b2;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    font-family: 'Quicksand', sans-serif;
+    animation: floatBaloon 4s infinite ease-in-out;
+    box-shadow: inset -5px -5px 10px rgba(0,0,0,0.1);
+}
+
+/* Tali Balon */
+.baloon::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 15px;
+    background: #a0a0a0;
+}
+
+/* Variasi Warna Balon */
+.baloon:nth-child(even) { background: #ffdac1; }
+.baloon:nth-child(3n) { background: #b5ead7; }
+.baloon:nth-child(4n) { background: #c7ceea; }
+
+/* Variasi Durasi Animasi (Biar Nggak Barengan) */
+.baloon:nth-child(1) { animation-delay: 0s; }
+.baloon:nth-child(2) { animation-delay: 0.5s; }
+.baloon:nth-child(3) { animation-delay: 1s; }
+.baloon:nth-child(4) { animation-delay: 1.5s; }
+.baloon:nth-child(5) { animation-delay: 2s; }
+.baloon:nth-child(6) { animation-delay: 2.5s; }
+
+@keyframes floatBaloon {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(5deg); }
+}
+
+/* --- TOMBOL "TIUP LILIN" --- */
+.btn-blow {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+.btn-blow:hover {
+    background-color: #c0392b;
+}

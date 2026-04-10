@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special for My Bestie</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Indie+Flower&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+<script>
+  // Efek konfeti otomatis saat halaman dibuka
+  window.onload = function() {
+    confetti({
+      particleCount: 150,
+      spread: 70,
+      origin: { y: 0.6 },
+      colors: ['#ffb7b2', '#ffdac1', '#e2f0cb', '#b5ead7', '#c7ceea']
+    });
+  };
+</script>
+
+<div class="container">
+    <header>
+        <h1>This is ur B'day My baby girlll</h1>
+        <p>A little digital gift for you 🌸</p>
+    </header>
+
+    <div class="gallery">
+        <div class="photo-card" style="transform: rotate(-3deg);">
+            <img src="syahla1.jpeg" alt="Foto 1">
+            <div class="caption"></div>
+        </div>
+        <div class="photo-card" style="transform: rotate(2deg);">
+            <img src="syahla2.jpeg" alt="Foto 2">
+            <div class="caption">Waktu kita ke LorTem</div>
+        </div>
+        <div class="photo-card" style="transform: rotate(-1deg);">
+            <img src="WhatsApp Image 2026-04-09 at 16.58.35.jpeg" alt="Foto 3">
+            <div class="caption"> INII CIYAPAA CANCII BANGETT!! Always be my bestiee yaa</div>
+        </div>
+    </div>
+
+    <div class="letter-container">
+        <h2>Dear, Syahlaa</h2>
+        <div class="letter-content">
+            <p>hayoww syahlaa, selamat ulang tahun yaam semoga di usia kamu kali ini, kamu terus banyak mendapatkan kebaikan yaa, semoga hari hari kamu mulus teruss, dan apapun itu yang kamu inginkan selalu terwujudkann</p>
+            <p>makasi yaa syahla kamu udah jadi temen aku ah bukan temen lagii, kamu udah jadi orang yang paling berhargaa di hidup akuu ini, makasi ya udah jadi tempat aku bercerita, buat aku ngeluh, sedihh, dan kamu selalu ada dan selalu membuat keadaan lebih baikk. kamuu juga kalo ada apapun itu cerita ajaa ya seng kuhh.</p>
+            <p>aku minta maaf selama ini suka ngeselin, ataupun bikin kamu marah, i know yang kamu lakukan itu bentuk peduli dan sayang kamu terhadap aku sebagai temen kamuu yaa, makasi banyak buat selalu care ke aku yahh, aku beruntung banget tauu di cende aku bisa deket banget sama kamu, coba aja aku ga se deket itu sama kamu pasti aku gabakalan tau nih kalo ada orang yang sebaikk iniii.</p>
+            <p>jangan banyak sedih sedih yah cantik, aku selalu support kamu dalam hal apapun, aku selalu berharap yang terbaik buat kamuu. aku harap kita bareng terus yahh sampe kapan pun ituu</p>
+            <p>happy birthday yaa cintaakuy, wish u all the best my loveeee</p>
+            <p style="text-align: right; margin-top: 40px;">— Dari ur CEES, echaa</p>
+        </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px; background: #fff; padding: 20px; border-radius: 15px; border: 2px dashed #ffb7b2;">
+    <h3>Klik untuk Wish hari ini! ✨</h3>
+    <p id="wish-text" style="font-family: 'Indie Flower', cursive; font-size: 1.5rem; min-height: 40px;">(Klik tombol di bawah)</p>
+    <button onclick="generateWish()" style="background: #ffb7b2; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer; color: white; font-weight: bold;">Buka Harapan</button>
+</div>
+
+<div class="gift-animation-container">
+    
+    <div class="baloon-container">
+        <div class="baloon">S</div>
+        <div class="baloon">Y</div>
+        <div class="baloon">A</div>
+        <div class="baloon">H</div>
+        <div class="baloon">L</div>
+        <div class="baloon">A</div>
+    </div>
+
+    <div class="cake">
+        <div class="candle" id="myCandle">
+            <div class="flame"></div>
+        </div>
+    </div>
+    
+    <button class="btn-blow" onclick="blowCandle()">Tiup Lilinnya! 🎂</button>
+</div>
+
+<script>
+function generateWish() {
+    const wishes = [
+        "Semoga rezeki nya mengalir deras yaa 🍕",
+        "Semoga tahun ini makin glowing luar dalam! ✨",
+        "Bahagia terus, sedihnya dikit aja yaa ❤️",
+        "Semoga yang kamu inginkan tercapaii 🛍️",
+        "Tetap jadi sahabat terbaikku selamanya! 👯‍♀️"
+    ];
+    const randomWish = wishes[Math.floor(Math.random() * wishes.length)];
+    document.getElementById('wish-text').innerHTML = randomWish;
+}
+
+// Fungsi untuk mematikan lilin
+function blowCandle() {
+    const candle = document.getElementById('myCandle');
+    candle.classList.add('blown-out'); // Menambahkan class untuk mematikan api
+    
+    // Suara tiupan (Opsional, jika ada file suaranya)
+    // var blowSound = new Audio('path/to/blow.mp3');
+    // blowSound.play();
+    
+    alert("Hooray! Selamat ulang tahun, Syahla! ✨🥳");
+}
+</script>
+
+
+    <footer>
+        Dibuat dengan segenap hati ☕ 2026
+    </footer>
+</div>
+
+</body>
+</html>
